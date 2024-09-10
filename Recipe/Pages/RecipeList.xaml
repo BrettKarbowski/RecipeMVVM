@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe.Pages.RecipeList"
+             Title="RecipeList">
+
+    <AbsoluteLayout>
+        <Image Source="https://cobackandspine.com/wp-content/uploads/Fall-Foods.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All" 
+               Opacity="0.25"/>
+
+        <VerticalStackLayout Padding="10"
+                             AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                             AbsoluteLayout.LayoutFlags="All">
+
+            <Label Text="        Welcome to &#10;the World of Recipes!"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="10"
+                   BackgroundColor="#80A9B8A3"
+                   TextColor="Black" 
+                   Margin="0, 0, 0, 20"/>
+
+            <Label Text="Here you will have easy access to the vast &#10;                  collection of recipes!" 
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="10"
+                   BackgroundColor="#80A9B8A3"
+                   Margin="0, 0, 0, 10"/>
+
+            <Label Text="&#x1F525;  IN THE SPOTLIGHT  &#x1F525;" 
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Padding="10"
+                   BackgroundColor="#80A9B8A3"
+                   Margin="0, 80, 0, 5"/>
+
+            <!-- Define ListView with item template -->
+            <ListView x:Name="listView"
+                      ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding ImageUrl}" HeightRequest="80" WidthRequest="80" Grid.Column="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Button Text="{Binding Title}"
+                                            FontAttributes="Bold"
+                                            BackgroundColor="#80A9B8A3"
+                                            TextColor="Black"
+                                            Clicked="OnDetailButtonClicked"
+                                            CommandParameter="{Binding .}"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+
+        <Label Text="Site under construction.. More content to come.." 
+                   HorizontalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.5, 1, AutoSize, AutoSize"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,YProportional" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe.Pages.RecipeDetails"
+             Title="Details">
+
+    <Grid>
+        <Image Source="https://cobackandspine.com/wp-content/uploads/Fall-Foods.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+               AbsoluteLayout.LayoutFlags="All" 
+               Opacity="0.25"/>
+
+
+        <ScrollView Padding="10">
+            <StackLayout HorizontalOptions="Center" Spacing="10">
+                <Label x:Name="itemTitle" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" BackgroundColor="#80A9B8A3"/>
+                <Image x:Name="itemImage" HeightRequest="200" Aspect="AspectFill" />
+                <Label Text="Description:" BackgroundColor="#80A9B8A3" FontAttributes="Bold" />
+                <Label x:Name="itemDescription" FontSize="16" />
+                <Label Text="Prep Time:" BackgroundColor="#80A9B8A3" FontAttributes="Bold" />
+                <Label x:Name="itemTime" FontSize="16" />
+                <Label Text="Ingredients" BackgroundColor="#80A9B8A3" FontAttributes="Bold" />
+                <Label x:Name="itemIngredients" FontSize="16" />
+                <Label Text="Directions" BackgroundColor="#80A9B8A3" FontAttributes="Bold" />
+                <Label x:Name="itemDirections" FontSize="16" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
